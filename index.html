@@ -1,0 +1,707 @@
+<!doctype html>
+<!-- Static homepage for AliceDXYu.github.io -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Danxia Yu, PhD, FASN — nutritional and molecular epidemiologist studying diet, the gut microbiome, multi-omics, electronic health records, and chronic disease.">
+  <meta name="theme-color" content="#252a50">
+  <title>Danxia Yu, PhD, FASN | Nutritional &amp; Molecular Epidemiology</title>
+  <style>
+    :root {
+      --navy: #252a50;
+      --navy-deep: #171c3a;
+      --teal: #007f9f;
+      --teal-bright: #00a2bd;
+      --cream: #f4f0e6;
+      --paper: #fbfaf7;
+      --gold: #c8a96b;
+      --ink: #1f2940;
+      --muted: #5d6879;
+      --line: #dce1e4;
+      --white: #ffffff;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Segoe UI", Inter, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      padding: 10px 14px;
+      color: var(--white);
+      background: var(--navy);
+      border-radius: 4px;
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-header {
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 10;
+      color: var(--white);
+    }
+
+    .nav {
+      width: min(calc(100% - 40px), var(--max-width));
+      min-height: 82px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 50%;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--white);
+      text-decoration: underline;
+      text-decoration-color: var(--gold);
+      text-underline-offset: 6px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 760px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: var(--white);
+      background: linear-gradient(118deg, var(--navy-deep) 0%, var(--navy) 56%, #064f70 100%);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 58vw;
+      height: 120%;
+      top: -10%;
+      right: -15vw;
+      background: linear-gradient(145deg, rgba(0, 162, 189, 0.94), rgba(0, 77, 112, 0.28));
+      clip-path: polygon(28% 0, 100% 0, 72% 100%, 0 100%);
+    }
+
+    .hero::after {
+      width: 32vw;
+      height: 95%;
+      top: 14%;
+      right: 8vw;
+      background: rgba(0, 127, 159, 0.24);
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      transform: rotate(6deg);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+      padding: 150px 0 96px;
+    }
+
+    .eyebrow {
+      margin: 0 0 20px;
+      color: #7ed6e5;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin-bottom: 24px;
+      font-size: clamp(3.4rem, 8vw, 6.6rem);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-lede {
+      max-width: 720px;
+      margin-bottom: 34px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: clamp(1.2rem, 2.4vw, 1.65rem);
+      line-height: 1.45;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.98rem;
+    }
+
+    .hero-meta span:not(:last-child)::after {
+      content: "";
+      width: 4px;
+      height: 4px;
+      display: inline-block;
+      margin-left: 22px;
+      vertical-align: middle;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    main section {
+      scroll-margin-top: 24px;
+    }
+
+    .section {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+      padding: 104px 0;
+    }
+
+    .section-kicker {
+      margin-bottom: 14px;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      max-width: 820px;
+      margin-bottom: 28px;
+      color: var(--navy);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
+      gap: clamp(48px, 9vw, 110px);
+      align-items: start;
+    }
+
+    .about-copy {
+      max-width: 760px;
+      color: #3f4b5d;
+      font-size: 1.2rem;
+    }
+
+    .principles {
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .principles li {
+      padding: 18px 0;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .principles span {
+      color: var(--teal);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+    }
+
+    .research-section {
+      padding: 104px 0;
+      background: var(--cream);
+    }
+
+    .research-inner {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .research-grid {
+      margin-top: 54px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid rgba(37, 42, 80, 0.18);
+      border-left: 1px solid rgba(37, 42, 80, 0.18);
+    }
+
+    .research-item {
+      min-height: 310px;
+      padding: clamp(30px, 5vw, 52px);
+      border-right: 1px solid rgba(37, 42, 80, 0.18);
+      border-bottom: 1px solid rgba(37, 42, 80, 0.18);
+    }
+
+    .research-number {
+      display: block;
+      margin-bottom: 54px;
+      color: var(--teal);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    h3 {
+      margin-bottom: 16px;
+      color: var(--navy);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      line-height: 1.2;
+    }
+
+    .research-item p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .approach-section {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .approach-section .section-kicker {
+      color: #76d3e2;
+    }
+
+    .approach-section h2 {
+      color: var(--white);
+    }
+
+    .approach-intro {
+      max-width: 760px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 1.15rem;
+    }
+
+    .approach-steps {
+      margin: 60px 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      list-style: none;
+      counter-reset: approach;
+      border-top: 1px solid rgba(255, 255, 255, 0.24);
+    }
+
+    .approach-steps li {
+      min-height: 180px;
+      padding: 26px 20px 26px 0;
+      counter-increment: approach;
+      color: rgba(255, 255, 255, 0.78);
+      border-right: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .approach-steps li::before {
+      content: "0" counter(approach);
+      display: block;
+      margin-bottom: 42px;
+      color: #76d3e2;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .approach-steps strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.05rem;
+    }
+
+    .programs {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: clamp(48px, 9vw, 110px);
+      align-items: start;
+    }
+
+    .program-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 2px solid var(--navy);
+    }
+
+    .program-list li {
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .program-list h3 {
+      margin-bottom: 8px;
+      font-size: 1.3rem;
+    }
+
+    .program-list p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: linear-gradient(120deg, #006c88, #008fab);
+    }
+
+    .contact::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -120px;
+      bottom: -250px;
+      border: 70px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
+
+    .contact .section {
+      position: relative;
+      z-index: 1;
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+
+    .contact h2 {
+      max-width: 720px;
+      color: var(--white);
+    }
+
+    .contact p {
+      max-width: 680px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.1rem;
+    }
+
+    .contact-link {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .contact-link:hover,
+    .contact-link:focus-visible {
+      color: #d5f6fb;
+    }
+
+    footer {
+      color: rgba(255, 255, 255, 0.68);
+      background: var(--navy-deep);
+    }
+
+    .footer-inner {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+      padding: 30px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 0.84rem;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        min-height: 72px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 680px;
+      }
+
+      .hero::before {
+        width: 80vw;
+        right: -38vw;
+        opacity: 0.75;
+      }
+
+      .hero::after {
+        display: none;
+      }
+
+      .about-grid,
+      .programs {
+        grid-template-columns: 1fr;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .approach-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .section,
+      .research-section {
+        padding-top: 76px;
+        padding-bottom: 76px;
+      }
+
+      .hero-inner {
+        padding-top: 124px;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 16vw, 4.6rem);
+      }
+
+      .hero-meta {
+        display: grid;
+        gap: 6px;
+      }
+
+      .hero-meta span::after {
+        display: none !important;
+      }
+
+      .approach-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .approach-steps li {
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .approach-steps li::before {
+        margin-bottom: 18px;
+      }
+
+      .footer-inner {
+        display: grid;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Danxia Yu — home">
+        <span class="brand-mark" aria-hidden="true">DY</span>
+        <span>Danxia Yu</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <p class="eyebrow">Nutritional &amp; Molecular Epidemiology</p>
+        <h1 id="hero-title">Danxia Yu, PhD, FASN</h1>
+        <p class="hero-lede">Connecting diet, the gut microbiome, multi-omics, and electronic health records to understand and prevent chronic disease.</p>
+        <div class="hero-meta" aria-label="Academic affiliation">
+          <span>Associate Professor</span>
+          <span>Division of Epidemiology</span>
+          <span>Vanderbilt University Medical Center</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="about-grid">
+        <div>
+          <p class="section-kicker">About</p>
+          <h2 id="about-title">Population science with a molecular lens</h2>
+          <p class="about-copy">My research integrates nutritional epidemiology, metabolomics, metagenomics, clinical data, and longitudinal cohorts to study how diet and the gut microbiome shape cardiometabolic health. The goal is to identify modifiable pathways, predictive biomarkers, and intervention targets that can improve chronic-disease prevention and treatment.</p>
+        </div>
+        <ul class="principles" aria-label="Research principles">
+          <li>Evidence first <span>01</span></li>
+          <li>Diverse populations <span>02</span></li>
+          <li>Mechanistic insight <span>03</span></li>
+          <li>Clinical translation <span>04</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="research-section" id="research" aria-labelledby="research-title">
+      <div class="research-inner">
+        <p class="section-kicker">Research</p>
+        <h2 id="research-title">From exposures to mechanisms to health outcomes</h2>
+        <div class="research-grid">
+          <article class="research-item">
+            <span class="research-number">01</span>
+            <h3>Nutritional epidemiology</h3>
+            <p>Dietary patterns and food exposures across demographically and geographically diverse populations, with outcomes spanning cardiovascular disease, diabetes, dementia, liver disease, and cancer.</p>
+          </article>
+          <article class="research-item">
+            <span class="research-number">02</span>
+            <h3>Multi-omics</h3>
+            <p>Metabolomics and metagenomics to characterize diet–microbiota–host interactions and discover biomarkers relevant to disease prevention and precision medicine.</p>
+          </article>
+          <article class="research-item">
+            <span class="research-number">03</span>
+            <h3>Gut microbiome</h3>
+            <p>Microbial species, pathways, and metabolites as mediators linking diet, obesity treatment, cardiometabolic health, and chronic-disease risk.</p>
+          </article>
+          <article class="research-item">
+            <span class="research-number">04</span>
+            <h3>EHR &amp; clinical epidemiology</h3>
+            <p>Electronic health record–based analyses and prospective studies of health trajectories and longitudinal multi-omics after obesity treatment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach-section" id="approach" aria-labelledby="approach-title">
+      <div class="section">
+        <p class="section-kicker">Approach</p>
+        <h2 id="approach-title">A rigorous path from population evidence to translation</h2>
+        <p class="approach-intro">Studies are designed to connect interpretable epidemiologic questions with complementary data sources, replication, and biological context.</p>
+        <ol class="approach-steps">
+          <li><strong>Define</strong> the causal or predictive question</li>
+          <li><strong>Measure</strong> exposures, omics, and outcomes</li>
+          <li><strong>Analyze</strong> diverse cohorts and clinical data</li>
+          <li><strong>Validate</strong> findings across populations</li>
+          <li><strong>Translate</strong> evidence into prevention targets</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="programs" aria-labelledby="programs-title">
+      <div class="programs">
+        <div>
+          <p class="section-kicker">Selected programs</p>
+          <h2 id="programs-title">Research across cohorts and clinical settings</h2>
+        </div>
+        <ul class="program-list">
+          <li>
+            <h3>Coronary heart disease metabolomics</h3>
+            <p>Prospective, multi-ethnic, multi-stage studies of gut microbial metabolites, cardiovascular risk, and risk prediction.</p>
+          </li>
+          <li>
+            <h3>Gut Microbiota in Metabolic Surgery (GUMMY)</h3>
+            <p>A multi-ethnic, longitudinal study integrating repeated biospecimens, surveys, electronic health records, and multi-omics after bariatric surgery.</p>
+          </li>
+          <li>
+            <h3>Collaborative cohort science</h3>
+            <p>Population-based research spanning diverse US and international cohorts, with collaboration across epidemiology, surgery, biostatistics, informatics, cardiology, and endocrinology.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="section">
+        <p class="section-kicker">Contact</p>
+        <h2 id="contact-title">Connect about research and collaboration</h2>
+        <p>Division of Epidemiology, Department of Medicine<br>Vanderbilt University Medical Center · Nashville, Tennessee</p>
+        <a class="contact-link" href="mailto:danxia.yu@vumc.org">danxia.yu@vumc.org <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Danxia Yu</span>
+      <span>Nutritional &amp; Molecular Epidemiology</span>
+    </div>
+  </footer>
+</body>
+</html>
